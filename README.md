@@ -1,21 +1,24 @@
 ## API-First approach to make Machine Learning solution usable
 
 ### Introduction
-In this application I have solved 'Titanic Survival Prediction problem' and trained a simple **VotingClassifier** to make predictions. 
+In this application I have solved 'Titanic Survival Prediction problem' and using simple **VotingClassifier** to make predictions. However, I am also trained many other models and if you want to then you can view their performance and can choose any of the desired model (by making some changes in `Src/utils/ClassificationModelBuilder.py` file) to make predictions. 
 
 ### Application Setup
-I have used Python's  `venv` module for creating/managing virtual environment and `flask` for API creation. 
+I have used Python's  `venv` module for creating/managing virtual environment and `flask` framework for API creation. 
 
-If you're not much aware of `venv` environment setup, than you can go through [this]((https://docs.python.org/3/tutorial/venv.html)) documentation. I learnt from same.
+If you're not much aware of `venv` environment setup, than you can go through [this](https://docs.python.org/3/tutorial/venv.html) documentation. I learnt from same.
 
 Once you have `venv` installed and got basic understanding, follow below steps to run this application:
-1. 
-2. 
-3. 
+1. `git clone https://github.com/amdp-chauhan/titanic-survival-complete-ml-solution.git` && `cd titanic-survival-complete-ml-solution`
+2. `python -m venv ./` - It will create a virtual environment in application directory.
+3. `Scripts\activate.bat` - It will run this virtual environment.
+4. `pip install -r packages.txt` - it will install all required dependencies.
+5. `python Src\server.py` - it will run the application.
+6. `deactivate` - If you want to exit from virtual environment.
+
+Upper commands will work fine in Windows 10, for Linux you can find alternatives in venv documentation.
 
 > Note that in `Src/server.py` file, second import statement is commented out, it is because if it is enabled then it starts retraining classifier models, which is not required if you already have created a final model and data-set is same. Final models exists in `Src/ml-model/voting_classifier_v1.pk` we use same model to make predictions for requested JSON record.
-
-### Used Modules
 
 ### Making Predictions 
 For predictions I have created an POST API:
@@ -23,7 +26,7 @@ For predictions I have created an POST API:
 http://{domain}/titanic-survival-classification-model/predict
  ```
 
-It accepts array of JSON of any record in return will give you a predicted Survival value in 0/1.
+It accepts list of JSON of test records in return will give you a predicted Survival values in 0/1.
 
 For example, for below input parameters: 
 

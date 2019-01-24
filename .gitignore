@@ -1,2 +1,6 @@
-Lib/site-packages/*
-!Lib/site-packages/pip
+Include/
+Lib/
+Scripts/
+xgboost/
+pip.selfcheck.json
+pyveny.cfg
