@@ -2,5 +2,5 @@ Include/
 Lib/
 Scripts/
 xgboost/
-pip.selfcheck.json
-pyveny.cfg
+/pip.selfcheck.json
+/pyveny.cfg
