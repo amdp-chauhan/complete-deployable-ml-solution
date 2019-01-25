@@ -2,7 +2,7 @@ from flask import Blueprint, jsonify, request
 import pandas as pd
 import dill as pickle
 import json
-from utils.DataPreparation import *
+from Src.utils.DataPreparation import *
 
 predict_api = Blueprint("predict_api", __name__)
 

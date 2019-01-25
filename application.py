@@ -1,15 +1,15 @@
 from flask import Flask, jsonify, request, render_template, abort
-# from utils import ClassificationModelBuilder # Uncomment only if you want to re-train your model
-from api.predict import predict_api
+# from Src.utils import ClassificationModelBuilder # Uncomment only if you want to re-train your model
+from Src.api.predict import predict_api
 from jinja2 import TemplateNotFound
 
-app = Flask(__name__ , template_folder='templates')
-app.register_blueprint(predict_api, url_prefix='/titanic-survival-classification-model')
+application = Flask(__name__ , template_folder='templates')
+application.register_blueprint(predict_api, url_prefix='/titanic-survival-classification-model')
 
 
 # Loading home page
-@app.route('/', defaults={'page': 'index'})
-@app.route('/<page>')
+@application.route('/', defaults={'page': 'index'})
+@application.route('/<page>')
 def show(page):
 
     try:
@@ -21,7 +21,7 @@ def show(page):
 
 
 # Handling 400 Error
-@app.errorhandler(400)
+@application.errorhandler(400)
 def bad_request(error=None):
 
 	message = {
@@ -36,4 +36,4 @@ def bad_request(error=None):
 
 # run application
 if __name__ == "__main__":
-    app.run()
+    application.run()
