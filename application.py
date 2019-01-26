@@ -3,7 +3,7 @@ from flask import Flask, jsonify, request, render_template, abort
 from Src.api.predict import predict_api
 from jinja2 import TemplateNotFound
 
-application = Flask(__name__ , template_folder='templates')
+application = Flask(__name__ , template_folder='./Src/templates')
 application.register_blueprint(predict_api, url_prefix='/titanic-survival-classification-model')
 
 
